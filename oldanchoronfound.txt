@@ -1,0 +1,24 @@
+private void SpatialAnchorManager_AnchorLocated(object sender, AnchorLocatedEventArgs args)
+    {
+        Debug.Log($"ASA - Anchor recognized as a possible anchor {args.Identifier} {args.Status}");
+
+        if (args.Status == LocateAnchorStatus.Located)
+        {
+            //Creating and adjusting GameObjects have to run on the main thread. We are using the UnityDispatcher to make sure this happens.
+            UnityDispatcher.InvokeOnAppThread(() =>
+            {
+                // Read out Cloud Anchor values
+                CloudSpatialAnchor cloudSpatialAnchor = args.Anchor;
+
+                //Create GameObject
+                GameObject anchorGameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                anchorGameObject.transform.localScale = new Vector3(.25f, 0.005f, 0.25f);
+                anchorGameObject.name = "AnchorPlane";
+                anchorGameObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("Legacy Shaders/Diffuse");
+                anchorGameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
+
+                // Link to Cloud Anchor
+                anchorGameObject.AddComponent<CloudNativeAnchor>().CloudToNative(cloudSpatialAnchor);
+            });
+        }
+    }

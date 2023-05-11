@@ -1,0 +1,48 @@
+Microsoft.Azure.SpatialAnchors.CloudSpatialException
+  at Microsoft.Azure.SpatialAnchors.NativeLibraryHelpers.CheckStatus (System.IntPtr handle, Microsoft.Azure.SpatialAnchors.status value) [0x00000] in <00000000000000000000000000000000>:0 
+  at Microsoft.Azure.SpatialAnchors.CloudSpatialAnchorSession+<>c__DisplayClass66_0.<CreateAnchorAsync>b__0 () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.ExecutionContextCallback (System.Object obj) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.ExecuteWithThreadLocal (System.Threading.Tasks.Task& currentTaskSlot) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.ExecuteEntry (System.Boolean bPreventDoubleExecution) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ThreadPoolWorkQueue.Dispatch () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading._ThreadPoolWaitCallback.PerformWaitCallback () [0x00000] in <00000000000000000000000000000000>:0 
+--- End of stack trace from previous location where exception was thrown ---
+
+  at Microsoft.Azure.SpatialAnchors.CloudSpatialAnchorSession.CreateAnchorAsync (Microsoft.Azure.SpatialAnchors.CloudSpatialAnchor anchor) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+MoveNextRunner.InvokeMoveNext (System.Object stateMachine) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+MoveNextRunner.Run () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.SynchronizationContextAwaitTaskContinuation+<>c.<.cctor>b__7_0 (System.Object state) [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.UnitySynchronizationContext+WorkRequest.Invoke () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.UnitySynchronizationContext.Exec () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.UnitySynchronizationContext.ExecuteTasks () [0x00000] in <00000000000000000000000000000000>:0 
+--- End of stack trace from previous location where exception was thrown ---
+
+  at Microsoft.Azure.SpatialAnchors.Unity.SpatialAnchorManager.CreateAnchorAsync (Microsoft.Azure.SpatialAnchors.CloudSpatialAnchor anchor, System.Threading.CancellationToken cancellationToken) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+MoveNextRunner.InvokeMoveNext (System.Object stateMachine) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+MoveNextRunner.Run () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.AwaitTaskContinuation.InvokeAction (System.Object state) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.AwaitTaskContinuation.RunCallback (System.Threading.ContextCallback callback, System.Object state, System.Threading.Tasks.Task& currentTask) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.SynchronizationContextAwaitTaskContinuation.Run (System.Threading.Tasks.Task ignored, System.Boolean canInlineContinuationTask) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.FinishContinuations () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.FinishStageTwo () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.Finish (System.Boolean bUserDelegateExecuted) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.Task.TrySetException (System.Object exceptionObject) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1[TResult].SetException (System.Exception exception) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetException (System.Exception exception) [0x00000] in <00000000000000000000000000000000>:0 
+  at Microsoft.Azure.SpatialAnchors.CloudSpatialAnchorSession.CreateAnchorAsync (Microsoft.Azure.SpatialAnchors.CloudSpatialAnchor anchor) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+MoveNextRunner.InvokeMoveNext (System.Object stateMachine) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+MoveNextRunner.Run () [0x00000] in <00000000000000000000000000000000>:0 
+  at System.Threading.Tasks.SynchronizationContextAwaitTaskContinuation+<>c.<.cctor>b__7_0 (System.Object state) [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.UnitySynchronizationContext+WorkRequest.Invoke () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.UnitySynchronizationContext.Exec () [0x00000] in <00000000000000000000000000000000>:0 
+  at UnityEngine.UnitySynchronizationContext.ExecuteTasks () [0x00000] in <00000000000000000000000000000000>:0 
