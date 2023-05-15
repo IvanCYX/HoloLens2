@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ConstrainToLine : MonoBehaviour
 {
-    private float xval, limit;
+    private float zval, limit, backLimit;
     public float scaledVal;
     private Vector3 prevPosition, curPosition;
     // Start is called before the first frame update
     void Start()
     {        
-        limit = 0.15f;
+        limit = 0.152f;
+        backLimit = -0.03f;
         prevPosition = gameObject.transform.localPosition;
         updatePosition(prevPosition);
     }
@@ -22,28 +23,28 @@ public class ConstrainToLine : MonoBehaviour
         curPosition = gameObject.transform.localPosition;
         if (curPosition != prevPosition)
         {
-            gameObject.transform.rotation = gameObject.transform.parent.transform.rotation;
+            //gameObject.transform.rotation = gameObject.transform.parent.transform.rotation;
             updatePosition(curPosition);
         }
     }
 
     private void updatePosition(Vector3 newPos)
     {
-        if (newPos.x > limit)
+        if (newPos.z > limit)
         {
-            xval = limit;
+            zval = limit;
         }
-        else if (newPos.x < -limit)
+        else if (newPos.z < backLimit)
         {
-            xval = -limit;
+            zval = backLimit;
         }
         else
         {
-            xval = newPos.x;
+            zval = newPos.z;
         }
-        prevPosition = new Vector3(xval, 0f, 0f);
+        prevPosition = new Vector3(0f, -0.004f, zval);
         gameObject.transform.localPosition = prevPosition;
-        scaledVal = (xval + limit)/ (2*limit);
-        //Debug.Log(scaledVal);
+        scaledVal = (zval + limit)/ (2*limit);
+        Debug.Log(curPosition);
     }
 }
