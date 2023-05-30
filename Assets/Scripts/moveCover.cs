@@ -10,9 +10,9 @@ public class moveCover : MonoBehaviour
     {
 
         //TODO FIND OPEN AND CLOSE POSITION
-        position1 = new Vector3(0.2569284f, -0.1517174f, -5.502f);
-        position2 = new Vector3(0.2569284f, -0.1517174f, -5.51775f);
-        position3 = new Vector3(0.2569284f, -0.1517174f, -5.535f);
+        position1 = new Vector3(-0.248f, -0.021f, -6.266f);
+        position2 = new Vector3(-0.248f, -0.021f, -6.283f);
+        position3 = new Vector3(-0.248f, -0.021f, -6.3f);
     }
 
     public void FirstPosition()
