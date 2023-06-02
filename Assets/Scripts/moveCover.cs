@@ -11,15 +11,15 @@ public class MoveCover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        position1 = new Vector3(-0.248f, -0.021f, -6.266f);
-        position2 = new Vector3(-0.248f, -0.021f, -6.283f);
-        position3 = new Vector3(-0.248f, -0.021f, -6.3f);
+        position1 = gameObject.transform.localPosition + new Vector3(0f, 0f, 0.03f);
+        position2 = gameObject.transform.localPosition + new Vector3(0f, 0f, 0f);
+        position3 = gameObject.transform.localPosition + new Vector3(-0.065f, -0.004f, 0.86f);
     }
 
     [PunRPC]
     public void FirstPositionRPC()
     {
-        gameObject.transform.position = position1;
+        gameObject.transform.localPosition = position1;
     }
 
     public void FirstPosition()
