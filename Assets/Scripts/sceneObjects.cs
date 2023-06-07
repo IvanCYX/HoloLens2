@@ -28,6 +28,7 @@ public class sceneObjects : MonoBehaviour
     public void ShowModelRPC()
     {
         model.SetActive(true);
+        Debug.Log("Button Pressed");
     }
 
     public void ShowModel()
