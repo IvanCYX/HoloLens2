@@ -7,7 +7,7 @@ The tools **required** to start development are:
 - Mixed Reality Feature Tool
 - Visual Studio/Visual Studio Code
 - Augmented Reality device (HoloLens2, Quest, Vision Pro, etc.)
-**Optional Tools**
+## Optional Tools
 - Blender
 - Git/GitHub
 - Arduino IDE/IDE2
