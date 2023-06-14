@@ -33,4 +33,4 @@ On Launch, click on **Start** then select the project in the **Project Path** fi
 #### Platform Support
 - Mixed Reality OpenXR Plugin
 
-Once
+Once all packages have been installed, go into the **Unity Editor** and click on **Mixed Reality** located above the toolbar. Select **Project** and click on **Apply recommended project settings for HoloLens2**.
