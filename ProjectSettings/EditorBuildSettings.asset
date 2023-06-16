@@ -9,5 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/AnchorFinding.unity
     guid: 800b9fcae89f76b419201a82862576dc
   m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 50652414d6a89824390b8b45518de79a, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d0a7bdb8df143434b965ee3a2d81a008, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 73fdda069229dc34c9624fabadd93e02, type: 2}
