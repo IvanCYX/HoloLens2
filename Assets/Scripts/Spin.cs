@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Spin : MonoBehaviour
 {
-    private float rotationSpeed = 100f;
+    private float rotationSpeed = 65f;
     private float delay = 0.015f;
     private bool isRotating = false;
 
