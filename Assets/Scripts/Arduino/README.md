@@ -8,7 +8,7 @@ Navigating to the **Assets --> Arduino** folder, we find all the scripts and ske
 - secrets
 - sketch_jun5a
 
-### ArduinoCommunication Script
+### ArduinoCommunication
 This code is responsible for establishing communication between a Unity application and an Arduino device over a TCP/IP connection. It allows the Unity application to send signals or commands to the Arduino for various purposes.
 
 The code utilizes the **TcpClient** class from the **System.Net.Sockets** namespace to establish a TCP/IP connection with the Arduino. It relies on the IP address and port number to connect to the Arduino device. The IP address should be set to the current IP address of the Arduino(**details below**), which might change daily. The port number is the specific port on which the Arduino is listening for incoming connections.
