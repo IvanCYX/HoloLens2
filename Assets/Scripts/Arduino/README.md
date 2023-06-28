@@ -24,6 +24,6 @@ The **ConnectToArduino** method attempts to connect to the Arduino by creating a
 The **OnDestroy** method is responsible for closing the writer and client connection when the Unity application is being destroyed to ensure proper cleanup.
 
 **IMPORTANT**
-Note that the IP address of the Arduino will change each time it is disconnected from a power source, or each day it re-connects to the WiFi network. As such, you will need to upload the **ipaddress** sketch to the Arduino and get the IP address from the Serial Output in the Arduino IDE. Once you have the new IP address, simply change the address in the **ipAddress** field.
+Note that the IP address of the Arduino will change each time it is disconnected from a power source, or each day it re-connects to the WiFi network. As such, you will need to upload the **ipaddress sketch** to the Arduino and get the IP address from the Serial Output in the Arduino IDE. Once you have the new IP address, simply change the address in the **ipAddress** field.
 
 ### ipAddress sketch
