@@ -2,7 +2,7 @@
 This section focuses on elucidating the intricacies of establishing communication between the HoloLens 2, a cutting-edge mixed reality device, and a WiFi-enabled Arduino Module. Leveraging the HoloLens 2's capabilities, users gain the ability to engage with augmented reality elements that serve as triggers for tangible, real-world events. This is achieved by transmitting a WiFi signal from the HoloLens 2 to the Arduino, a versatile microcontroller platform. Subsequently, the Arduino adeptly emits an electronic analog signal, enabling seamless interaction with an extensive range of electronic components, circuits, and devices.
 
 ## Tools
-Navigating to the **Assets --> Arduino** folder, we find all the scripts and sketches we need that allow the HoloLens 2 to communicate with the Arduino:
+Navigating to the **Assets --> Scripts --> Arduino** folder, we find all the scripts and sketches we need that allow the HoloLens 2 to communicate with the Arduino:
 - ArduinoCommunication
 - ipaddress sketch
 - secrets
@@ -39,7 +39,7 @@ The **printData()** function is responsible for printing the network information
 
 Overall, this code enables the Arduino board to connect to a WiFi network, retrieve network information, and display it through the serial monitor. It can be useful for monitoring the network status and obtaining network-related data for further processing or analysis.
 
-**Upload this script to a WiFi enabled Arduino Board each day and update the IP Address in the ArduinoCommunication script with the IP Address acquired from the Serial Output**
+**Upload this script to a WiFi enabled Arduino Board each day and update the IP Address field in the ArduinoCommunication script with the IP Address acquired from the Serial Output**
 
 ### secrets
 The header file contains two defined constants: **SECRET_SSID** and **SECRET_PASS**. These constants store the WiFi network name (SSID)
