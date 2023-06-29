@@ -26,6 +26,8 @@ The **OnDestroy** method is responsible for closing the writer and client connec
 **IMPORTANT**
 Note that the IP address of the Arduino will change each time it is disconnected from a power source, or each day it re-connects to the WiFi network. As such, you will need to upload the **ipaddress sketch** to the Arduino and get the IP address from the Serial Output in the Arduino IDE. Once you have the new IP address, simply change the address in the **ipAddress** field.
 
+**Attach this script to a button**
+
 ### ipAddress sketch
 The code begins by including the necessary libraries, including "WiFiNINA.h" and "secrets.h" which contains sensitive data such as the network SSID and password.
 
@@ -36,6 +38,8 @@ The **loop()** function is responsible for periodically checking the network con
 The **printData()** function is responsible for printing the network information. It retrieves the local IP address, SSID, signal strength (RSSI), and encryption type using various functions provided by the WiFiNINA library, and then prints the retrieved information to the serial monitor.
 
 Overall, this code enables the Arduino board to connect to a WiFi network, retrieve network information, and display it through the serial monitor. It can be useful for monitoring the network status and obtaining network-related data for further processing or analysis.
+
+**Upload this script to a WiFi enabled Arduino Board each day and update the IP Address in the ArduinoCommunication script with the IP Address acquired from the Serial Output**
 
 ### secrets
 The header file contains two defined constants: **SECRET_SSID** and **SECRET_PASS**. These constants store the WiFi network name (SSID)
@@ -52,3 +56,5 @@ In the **loop()** function, the code continuously checks for client connections 
 The **activateMotor()** function is responsible for controlling the servo motor. It uses a for-loop to rotate the motor from 0 to 180 degrees in increments of 1, with a slight delay of 15 milliseconds between each increment. After reaching 180 degrees, it reverses the rotation by decrementing from 179 to 0, again with a delay between each step. This action creates a back-and-forth sweeping motion of the servo motor.
 
 Overall, this code allows a client device to trigger the servo motor movement via WiFi by sending a specific message to the Arduino, resulting in the physical rotation of the servo motor.
+
+**After getting the new IP Address, upload this sketch to the Arduino. Keep an eye on the serial output during Unity Emulator, or HoloLens 2 App runtime for flags**
