@@ -12,8 +12,8 @@ public class Spin : MonoBehaviour
 
     private System.Collections.IEnumerator RotateCube()
     {
-        // Rotate the cube 180 degrees on the y-axis
-        Quaternion targetRotation = Quaternion.Euler(0f, 180f, 0f);
+        // Rotate the cube 180 degrees on the y-axis clockwise
+        Quaternion targetRotation = Quaternion.Euler(0f, -180f, 0f);
         Quaternion initialRotation = transform.rotation;
 
         float t = 0f;
@@ -27,7 +27,7 @@ public class Spin : MonoBehaviour
         // Wait for the specified delay
         yield return new WaitForSeconds(delay);
 
-        // Rotate the cube back 180 degrees on the y-axis
+        // Rotate the cube back 180 degrees on the y-axis counter-clockwise
         targetRotation = Quaternion.Euler(0f, 0f, 0f);
         initialRotation = transform.rotation;
 

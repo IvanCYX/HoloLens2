@@ -27,6 +27,24 @@ The **OnDestroy** method is responsible for closing the writer and client connec
 Note that the IP address of the Arduino will change each time it is disconnected from a power source, or each day it re-connects to the WiFi network. As such, you will need to upload the **ipaddress sketch** to the Arduino and get the IP address from the Serial Output in the Arduino IDE. Once you have the new IP address, simply change the address in the **ipAddress** field.
 
 ### ipAddress sketch
+The code begins by including the necessary libraries, including "WiFiNINA.h" and "secrets.h" which contains sensitive data such as the network SSID and password.
+
+In the **setup()** function, the serial communication is initialized, and the code attempts to connect to the WiFi network using the provided SSID and password. It continuously attempts to connect until a successful connection is established. Once connected, it prints a message indicating the successful connection and calls the **printData()** function to display network information such as the board's IP address, SSID, signal strength (RSSI), and encryption type.
+
+The **loop()** function is responsible for periodically checking the network connection and printing the network information every 10 seconds. It introduces a delay of 10 seconds using the **delay()** function to control the frequency of network checks and information printing.
+
+The **printData()** function is responsible for printing the network information. It retrieves the local IP address, SSID, signal strength (RSSI), and encryption type using various functions provided by the WiFiNINA library, and then prints the retrieved information to the serial monitor.
+
+Overall, this code enables the Arduino board to connect to a WiFi network, retrieve network information, and display it through the serial monitor. It can be useful for monitoring the network status and obtaining network-related data for further processing or analysis.
+
+### secrets
+The header file contains two defined constants: **SECRET_SSID** and **SECRET_PASS**. These constants store the WiFi network name (SSID)
+and password (PASS) in a secure manner. By storing the network name and password in a separate header file like this, you can keep this sensitive information separate from the main code.
+This practice helps protect the credentials from being accidentally shared or exposed when sharing or publishing the code.
+
+You can replace both the **SECRET_SSID** and **SECRET_PASS** variables with the name of your network and the actual password to enable the Arduino board to establish a connection.
+
+### sketch_jun5a
 This Arduino code facilitates the communication between an Arduino board equipped with a WiFi module and a client device connected over WiFi. The code establishes a WiFi connection by providing the appropriate SSID and password (network name and password specified in **secrets.h**). Once connected, it initializes a WiFi server that listens for incoming client connections on port 1234.
 
 In the **loop()** function, the code continuously checks for client connections and, if a connection is established, it proceeds to handle the communication. When a message is received from the client, it is read and printed to the Serial monitor for debugging purposes. Additionally, the code prints a message indicating that it will initiate the servo motor rotation.
@@ -34,8 +52,3 @@ In the **loop()** function, the code continuously checks for client connections 
 The **activateMotor()** function is responsible for controlling the servo motor. It uses a for-loop to rotate the motor from 0 to 180 degrees in increments of 1, with a slight delay of 15 milliseconds between each increment. After reaching 180 degrees, it reverses the rotation by decrementing from 179 to 0, again with a delay between each step. This action creates a back-and-forth sweeping motion of the servo motor.
 
 Overall, this code allows a client device to trigger the servo motor movement via WiFi by sending a specific message to the Arduino, resulting in the physical rotation of the servo motor.
-
-### secrets
-The header file you provided contains two defined constants: SECRET_SSID and SECRET_PASS. These constants store the WiFi network name (SSID) and password (PASS) in a secure manner. By storing the network name and password in a separate header file like this, you can keep this sensitive information separate from the main code. This practice helps protect the credentials from being accidentally shared or exposed when sharing or publishing the code.
-
-You can replace both the **SECRET_SSID** and **SECRET_PASS** variables with the name of your network and the actual password to enable the Arduino board to establish a connection.

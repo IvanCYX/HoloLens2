@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 public class ArduinoCommunication : MonoBehaviour
 {
-    private const string ipAddress = "10.65.232.187"; //Arduino IP address, (changes daily)
-    private const int port = 1234;                      // run ipaddress sketch to update
+    private const string ipAddress = "10.65.124.38"; //Arduino IP address, (changes daily)
+    private const int port = 1234;                      // run ipaddress sketch and update
 
     private TcpClient client;
     private StreamWriter writer;
