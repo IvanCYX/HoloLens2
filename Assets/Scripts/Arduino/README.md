@@ -1,9 +1,9 @@
 # Using the HoloLens 2 to communicate with Arduino MKR WiFi 1010
-This section is dedicated to explaining communication between the HoloLens 2 and a WiFi-enabled Arduino Module. Using the HoloLens 2, we can interact with Augmented Reality(AR)-elements that trigger real-world events by sending a WiFi signal to the Arduino. The Arduino can then send out an electronic analog signal which can be used to interact with a diverse array of electronic systems and components.
+This section focuses on elucidating the intricacies of establishing communication between the HoloLens 2, a cutting-edge mixed reality device, and a WiFi-enabled Arduino Module. Leveraging the HoloLens 2's capabilities, users gain the ability to engage with augmented reality elements that serve as triggers for tangible, real-world events. This is achieved by transmitting a WiFi signal from the HoloLens 2 to the Arduino, a versatile microcontroller platform. Subsequently, the Arduino adeptly emits an electronic analog signal, enabling seamless interaction with an extensive range of electronic components, circuits, and devices.
 
 ## Tools
 Navigating to the **Assets --> Arduino** folder, we find all the scripts and sketches we need that allow the HoloLens 2 to communicate with the Arduino:
-- ArduinoCommunication script
+- ArduinoCommunication
 - ipaddress sketch
 - secrets
 - sketch_jun5a
@@ -27,3 +27,15 @@ The **OnDestroy** method is responsible for closing the writer and client connec
 Note that the IP address of the Arduino will change each time it is disconnected from a power source, or each day it re-connects to the WiFi network. As such, you will need to upload the **ipaddress sketch** to the Arduino and get the IP address from the Serial Output in the Arduino IDE. Once you have the new IP address, simply change the address in the **ipAddress** field.
 
 ### ipAddress sketch
+This Arduino code facilitates the communication between an Arduino board equipped with a WiFi module and a client device connected over WiFi. The code establishes a WiFi connection by providing the appropriate SSID and password (network name and password specified in **secrets.h**). Once connected, it initializes a WiFi server that listens for incoming client connections on port 1234.
+
+In the **loop()** function, the code continuously checks for client connections and, if a connection is established, it proceeds to handle the communication. When a message is received from the client, it is read and printed to the Serial monitor for debugging purposes. Additionally, the code prints a message indicating that it will initiate the servo motor rotation.
+
+The **activateMotor()** function is responsible for controlling the servo motor. It uses a for-loop to rotate the motor from 0 to 180 degrees in increments of 1, with a slight delay of 15 milliseconds between each increment. After reaching 180 degrees, it reverses the rotation by decrementing from 179 to 0, again with a delay between each step. This action creates a back-and-forth sweeping motion of the servo motor.
+
+Overall, this code allows a client device to trigger the servo motor movement via WiFi by sending a specific message to the Arduino, resulting in the physical rotation of the servo motor.
+
+### secrets
+The header file you provided contains two defined constants: SECRET_SSID and SECRET_PASS. These constants store the WiFi network name (SSID) and password (PASS) in a secure manner. By storing the network name and password in a separate header file like this, you can keep this sensitive information separate from the main code. This practice helps protect the credentials from being accidentally shared or exposed when sharing or publishing the code.
+
+You can replace both the **SECRET_SSID** and **SECRET_PASS** variables with the name of your network and the actual password to enable the Arduino board to establish a connection.
