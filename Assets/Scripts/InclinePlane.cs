@@ -75,26 +75,26 @@ public class InclinedPlane : MonoBehaviour
 
     private void MoveBlock()
     {
-        // Calculate the normal force (perpendicular to the inclined plane)
+        // Calculate normal force
         normalForce = rb.mass * Mathf.Cos(rampAngle * Mathf.Deg2Rad);
 
-        // Calculate the frictional force (opposes the motion)
+        // Calculate frictional force
         frictionForce = frictionCoefficient * normalForce;
 
-        // Calculate the acceleration of the block along the inclined plane
+        // Calculate acceleration of block along inclined plane
         float rampAngleRad = rampAngle * Mathf.Deg2Rad;
         float accelerationAlongRamp = acceleration * Mathf.Sin(rampAngleRad);
 
-        // Adjust the acceleration to account for friction
+        // Adjust acceleration to account for friction
         accelerationAlongRamp -= frictionForce / rb.mass;
 
-        // Calculate the time taken for the block to reach the displacement
+        // Calculate time taken for block to reach displacement
         float time = Mathf.Sqrt(2f * displacement / accelerationAlongRamp);
 
-        // Calculate the final velocity at the end of the displacement
+        // Calculate final velocity at end of displacement
         float finalVelocity = initialVelocity + accelerationAlongRamp * time;
 
-        // Set the velocity of the block in the direction of the inclined plane
+        // Set velocity of block in direction of inclined plane
         Vector3 velocity = new Vector3(finalVelocity * Mathf.Cos(rampAngleRad), 0f, finalVelocity * Mathf.Sin(rampAngleRad));
         rb.velocity = velocity;
     }
