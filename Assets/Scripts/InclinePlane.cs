@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InclinedPlane : MonoBehaviour
+/*public class InclinedPlane : MonoBehaviour
 {
     [SerializeField] private Transform block;
     [SerializeField] private float initialVelocity = 10f;
@@ -51,7 +51,7 @@ public class InclinedPlane : MonoBehaviour
         // Apply normal force to block along y-axis
         blockRigidbody.AddForce(Vector3.up * normalForce, ForceMode.Force);
     }
-}
+}*/
 
 using UnityEngine;
 
