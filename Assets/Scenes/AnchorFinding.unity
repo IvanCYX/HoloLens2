@@ -3068,7 +3068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rampAngle: 30
   frictionCoefficient: 0.5
-  initialVelocity: 2
+  initialVelocity: 5
 --- !u!54 &350187826
 Rigidbody:
   m_ObjectHideFlags: 0

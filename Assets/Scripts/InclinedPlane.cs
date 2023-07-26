@@ -14,9 +14,10 @@ public class InclinedPlane : MonoBehaviour
     private void Start()
     {
         // Calculate the direction of the inclined plane (ignoring Z component)
-        inclinedDirection = Quaternion.Euler(-rampAngle, 0f, 0f) * Vector3.forward;
+        inclinedDirection = Quaternion.Euler(-rampAngle, 0f, 0f) * Vector3.right;
         inclinedDirection.z = 0f;
         inclinedDirection.Normalize();
+        Debug.Log(inclinedDirection);
 
         // Calculate the acceleration of the block along the inclined plane
         accelerationAlongRamp = Physics.gravity.magnitude * Mathf.Sin(rampAngle * Mathf.Deg2Rad) - frictionCoefficient * Physics.gravity.magnitude * Mathf.Cos(rampAngle * Mathf.Deg2Rad);
