@@ -27,7 +27,7 @@ public class AnchorPlacementandInitialization : MonoBehaviour
         _spatialAnchorManager.LogDebug += (sender, args) => Debug.Log($"ASA - Debug: {args.Message}");
         _spatialAnchorManager.Error += (sender, args) => Debug.LogError($"ASA - Error: {args.ErrorMessage}");
         _spatialAnchorManager.AnchorLocated += SpatialAnchorManager_AnchorLocated;
-        anchorPlane = transform.Find("VacTube").gameObject;
+        anchorPlane = transform.Find("InclinedPlane").gameObject;
         alertScript = alertObject.GetComponent<UserAlert>();
     }
 
@@ -132,8 +132,6 @@ public class AnchorPlacementandInitialization : MonoBehaviour
   
     }
     // </CreateAnchor>
-
-  
 
     public async void findWrap()
     {
