@@ -145,6 +145,7 @@ public class AnchorPlacementandInitialization : MonoBehaviour
         await _spatialAnchorManager.StartSessionAsync();
         LocateAnchor();
     }
+
     private void LocateAnchor()
     {
 
